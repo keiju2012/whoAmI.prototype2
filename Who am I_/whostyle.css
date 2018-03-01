@@ -1,0 +1,549 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+body {
+    font-family: 'Nunito', sans-serif;    
+}
+
+h3, h2 {
+    color: white;
+}
+
+#container {
+    transition-duration: 2s;
+    overflow: auto;
+    position: fixed;
+    background-image: url(Icons/bgIndex2.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: auto;
+    height: 100vh;
+    width: 101vw;
+    top: 0px;
+    left: -5px;
+    right: 0;
+    margin: auto;
+    z-index: -1;
+}
+
+/*  Sticky Header Stuff */
+
+    #stickyHeader {
+        position: fixed;
+        background-color: #450000;
+        left: 0;
+        top: 0;
+        height: 15%;
+        width: 100%;
+        z-index: 2;
+    }
+
+    .logoPic {       
+        position: absolute;
+        top: 5px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 10%;
+        height: 90%;
+        z-index: 1;
+    }
+
+    #logoPic:hover {
+
+    }
+
+
+    .btnHelp {
+        position: relative;
+        background-image: url(Icons/btnHelp.svg);
+        background-size: contain;
+        background-repeat: no-repeat; 
+        float: right;
+        margin: auto;
+        top: 35%;
+        right: 5%;  
+        width: 10%;
+        height: 50%;
+
+    }
+
+    .btnHelp:hover {
+        width:11%;
+        right: 4%;
+        top: 33%;
+    }
+
+    #title {
+        position:relative;
+        background-image: url(Icons/title.svg);
+        background-size: contain;
+        background-repeat: no-repeat;     
+        margin: auto;
+        top: 240px;
+        left: 0;
+        right: 0;
+        width: 50%;
+        height: 100px;
+    }
+
+/*  mainMenu elements   */
+
+#mainMenu {
+    background-image: url(Icons/bgIndex2.svg);
+    background-size: cover;
+    background-repeat: no-repeat;    
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+}
+
+ #logoGirl {
+     position: absolute;
+     float: right;
+     background-image: url(Icons/logoGirl.svg);
+     background-size: contain;
+     background-repeat: no-repeat;
+     bottom: 0px;
+     right: 1%;
+     top: 25%;
+     margin: auto;
+     width: 25%
+   
+}
+
+/*  Main Menu Buttons   */
+
+    .btnMain {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin:auto;
+        min-height: 70px;
+        width: 180px;
+    }
+
+    #btnStart {
+        background-image: url(Icons/btnStart.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        top: 35%;
+
+    }
+    
+        #btnStart:hover, #btnSceneSelect:hover, #btnMyMemories:hover, #btnFeedback:hover {
+            height:80px;
+        }   
+
+    #btnSceneSelect {
+        background-image: url(Icons/btnSceneSelect.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        top: 50%;
+
+    }
+
+    #btnMyMemories {
+        background-image: url(Icons/btnMyMemories.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        top: 65%;
+
+    }
+
+    #btnFeedback {
+        background-image: url(Icons/btnFeedback.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        top: 80%;
+        margin: auto;
+
+    }
+
+/*  Social Networking buttons    */
+
+    #btnInstagram {
+        position: absolute;
+        background-image: url(Icons/btnInstagram.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        float: left; 
+        bottom: 5px;
+        left: 0px;
+        margin: 5px;
+        width: 64px;
+        height: 64px;
+    }
+
+    #btnTwitter {
+        position: absolute;
+        background-image: url(Icons/btnTwitter.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        float: left;
+        margin: 5px;
+        bottom: 5px;
+        left: 74px;
+        width: 64px;
+        height: 64px;
+    }
+
+    #btnFacebook {
+        position: absolute;
+        background-image: url(Icons/btnfacebook.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        float: left;
+        margin: 5px;
+        bottom: 5px;
+        left: 148px;
+        width: 64px;
+        height: 64px;
+    }
+
+    #btnInstagram:hover, #btnTwitter:hover, #btnFacebook:hover {
+            height: 69px;
+        
+    }
+
+
+
+
+/*  sceneSelect stuff   */
+
+#innerSSContainer {
+    position: relative;
+    top: 20vh;
+}
+
+.btnBack {
+    float: right;
+    right: 10%;
+}
+
+.sceneSelect {
+    display: inherit;
+    opacity: 0.0;
+    transition-duration: 2s;
+    background border-radius: 25px;
+    position: fixed;
+    margin: auto;
+    width: 100vw;
+    height: 100vh;
+    top: 0vh;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -2;
+    background-color: #444444;
+}
+
+#chapterElements {
+    position: relative;
+    top: 10vh;
+}
+
+#chapterElements > div {
+    display: inline-block;
+    text-align: center;
+    width: 30%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;    
+
+}
+
+#btnDdChapter {
+    position: relative;
+    padding-left: 8%;
+    padding-right: 8%;
+}
+
+#btnDdScene {
+    position: relative;
+    padding-left: 11%;
+    padding-right: 8%;
+}
+
+#chboxUnlocked {
+    position: absolute;
+    display: block;
+    text-align: right;
+    right: 500px;
+    top: -140px;
+}
+
+.btnSceneSelect {
+    display: inline-block;
+    width: 55px;   
+}
+/*  Chapter Dropdown    */
+
+    
+     .dropbtn {
+        background-color: #450000;
+        color: white;
+        padding: 16px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .dropbtn:hover, .dropbtn:focus {
+        background-color: #b94f4f;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        overflow: auto;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .dropdown a:hover {
+        background-color: #f1f1f1;
+        cursor: pointer;
+    }
+
+    .show {
+        display:block;
+    }
+    
+
+/*  Feedback Form   */
+
+@keyframes feedbackform{
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes feedbackform2{
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+
+        #feedback-page {
+          text-align: center;
+        }
+
+        #form-main {
+            
+            width: 100%;
+            display: none;
+            float: left;
+            padding-top: 50px;
+
+        }
+
+        #form-div {
+          background-color: rgba(72, 72, 72, 1);
+          padding-left: 35px;
+          padding-right: 35px;
+          padding-top: 35px;
+          padding-bottom: 50px;
+          width: 450px;
+          float: left;
+          left: 50%;
+          position: absolute;
+          margin-top: 0px;
+          margin-left: -260px;
+          -moz-border-radius: 7px;
+          -webkit-border-radius: 7px;
+        }
+
+        .feedback-input {
+          color: #3c3c3c;
+          font-family: 'Nunito', sans-serif;
+          font-weight: 500;
+          font-size: 14pt;
+          border-radius: 0;
+          line-height: 22px;
+          background-color: #fbfbfb;
+          padding: 13px 13px 13px 54px;
+          margin-bottom: 10px;
+          width: 100%;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          -ms-box-sizing: border-box;
+          box-sizing: border-box;
+          border: 3px solid rgba(0, 0, 0, 0);
+        }
+
+        .feedback-input:focus {
+          background: #fff;
+          box-shadow: 0;
+          border: 3px solid #932929;
+          color: #b94f4f;
+          outline: none;
+          padding: 13px 13px 13px 54px;
+        }
+
+        .focused {
+          color: #b94f4f;
+          border: #450000 solid 3px;
+        }
+
+
+        /* Icons ---------------------------------- */
+
+        #name {
+          background-image: url(http://rexkirby.com/kirbyandson/images/name.svg);
+          background-size: 30px 30px;
+          background-position: 11px 8px;
+          background-repeat: no-repeat;
+        }
+
+        #name:focus {
+          background-image: url(http://rexkirby.com/kirbyandson/images/name.svg);
+          background-size: 30px 30px;
+          background-position: 8px 5px;
+          background-position: 11px 8px;
+          background-repeat: no-repeat;
+        }
+
+         {
+          background-image: url(http://rexkirby.com/kirbyandson/images/email.svg);
+          background-size: 30px 30px;
+          background-position: 11px 8px;
+          background-repeat: no-repeat;
+        }
+
+        #email:focus {
+          background-image: url(http://rexkirby.com/kirbyandson/images/email.svg);
+          background-size: 30px 30px;
+          background-position: 11px 8px;
+          background-repeat: no-repeat;
+        }
+
+        #comment {
+          background-image: url(http://rexkirby.com/kirbyandson/images/comment.svg);
+          background-size: 30px 30px;
+          background-position: 11px 8px;
+          background-repeat: no-repeat;
+        }
+
+        textarea {
+          width: 100%;
+          height: 150px;
+          line-height: 150%;
+          resize: vertical;
+        }
+
+        input:hover,
+        textarea:hover,
+        input:focus,
+        textarea:focus {
+          background-color: white;
+        }
+
+        #btnRed {
+          font-family: 'Nunito', Arial, Helvetica, sans-serif;
+          float: left;
+          width: 100%;
+          border: #fbfbfb solid 4px;
+          cursor: pointer;
+          background-color: #b94f4f;
+          color: white;
+          font-size: 24px;
+          padding-top: 22px;
+          padding-bottom: 22px;
+          -webkit-transition: all 0.3s;
+          -moz-transition: all 0.3s;
+          transition: all 0.3s;
+          margin-top: -4px;
+          font-weight: 700;
+        }
+
+        #btnRed:hover {
+          background-color: rgba(0, 0, 0, 0);
+          color: #b94f4f;
+        }
+
+        .submit:hover {
+          color: #3498db;
+        }
+
+        .ease {
+          width: 0px;
+          height: 74px;
+          background-color: #fbfbfb;
+          -webkit-transition: .3s ease;
+          -moz-transition: .3s ease;
+          -o-transition: .3s ease;
+          -ms-transition: .3s ease;
+          transition: .3s ease;
+        }
+
+        .submit:hover .ease {
+          width: 100%;
+          background-color: white;
+        }
+
+        @media only screen and (max-width: 580px) {
+          #form-div {
+            left: 3%;
+            margin-right: 3%;
+            width: 88%;
+            margin-left: 0;
+            padding-left: 3%;
+            padding-right: 3%;
+          }
+        }    
+    
+
+/*  in game Nav Bar and Text Box    */
+
+#theChapters {
+    position: fixed;
+    width: 100vw;
+    height: 98vh;
+    margin-top: 0%;
+    margin-left: -1%;
+    z-index: -2;
+}
+
+#navBar {
+    position: absolute;
+    background-image: url(Icons/leftNavBar.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    top: 20vh;
+    left: 30px;
+    right: 0;
+    bottom: 0;
+    width: 95px;
+    height: 69vh;
+}
+
+#textBox {
+    position: fixed;
+    background-color: white;
+    width: 800px;
+    height: 250px;
+    border: 2px solid #b94f4f;
+    border-radius: 25px; 
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 0%;
+    width: 55%;
+    min-height: 300px;
+
+}
+

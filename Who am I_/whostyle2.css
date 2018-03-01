@@ -1,0 +1,588 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+h1 {
+    font-family: 'Nunito', sans-serif;    
+}
+
+
+
+
+
+/* For chapter 1 */
+#backg {
+    transition-duration: 2s;
+    position: absolute;
+    background-image:url(Icons/bgPark.svg);
+    background-size: 100%;
+   
+   height: 100vh; 
+    width: 100vw;
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: -2;
+    background-repeat: no-repeat;
+}
+#interactive {
+     transition-duration: 2s;
+    position: absolute;
+    background-image:url(Icons/bgHospital.svg);
+    background-size: 100%;
+   opacity: 0%;
+   height: 100vh; 
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: -1;
+    background-repeat: no-repeat;
+}
+
+p {
+    padding: 30px;
+    margin: 5px;
+    font-family: "OpenSans", sans-serif;
+    font-size: 12pt;
+}
+        #ch1item {
+            background-image: url(Icons/objScope.svg);
+            background-repeat: no-repeat;
+            position:absolute; 
+            width: 10%;
+            height: 10%;
+            top: 65%;
+            left: 20%;
+            float: left;
+            opacity: 0;
+            transition-duration: 2s;
+            }
+        #ch1item2 {
+            background-image: url(Icons/objPillcase.svg);
+            background-repeat: no-repeat;
+            position:absolute; 
+            width: 10%;
+            height: 10%;
+            top: 60%;
+            right: 10%;
+            float: right;
+            opacity: 0;
+            transition-duration: 2s;
+            }
+            #ch1item3 {
+                background-image: url(Icons/objFlowers.svg);
+                background-repeat: no-repeat;
+                position: absolute;
+                width: 10%;
+                height: 10%;
+                top: 62%;
+                left: 30%;
+                float: left;
+                opacity: 0;
+                transition-duration: 2s;
+            }
+            #ch1item4 {
+                background-image: url(Icons/objID.svg);
+                background-repeat: no-repeat;
+                position: absolute;
+                width: 10%;
+                height: 10%;
+                top: 65%;
+                left: 40%; 
+                opacity: 0;
+                transition-duration: 2s;
+            }
+            #ch1item5{
+                background-image: url(Icons/objPic.svg);
+                background-repeat: no-repeat;
+                position: absolute;
+                width: 10%;
+                height: 10%;
+                top: 50%;
+                left: 50%; 
+                opacity: 0;
+                transition-duration: 2s;
+            }
+            #dreamOrb{
+                background-image: url(Icons/orb_active.svg);
+                background-size: 50%; 
+                background-repeat: no-repeat;
+                position: absolute;
+                width: 50%;
+                height: 50%; 
+                top: 25%;
+                left: 50%; 
+                opacity: 0;
+                transition-duration: 2s; 
+    
+}
+
+/* For Chapter 2 */
+#backg2 {
+transition-duration: 2s;
+    position: absolute;
+    background-image:url(Icons/bgUnknownBed.svg);
+    background-size: 100%;
+   opacity: 100%;
+   height: 100vh; 
+    
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0%;
+    margin: auto;
+    z-index: -1;
+    background-repeat: no-repeat;
+}
+mainBack{
+    transition-duration: 2s;
+    position: relative;
+    background-image:url(Icons/bgHospital.svg);
+    background-size: 100%;
+   opacity: 100%;
+   height: 100vh; 
+    opacity: 0%;
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: -1;
+    background-repeat: no-repeat;
+}
+ #ch2item {
+            background-image: url(Icons/orb_active.png);
+            background-repeat: no-repeat;
+            position:absolute; 
+     background-size: 70%;
+            width: 10%;
+            height: 10%;
+            top: 65%;
+            left: 10%;
+            float: left;
+            opacity: 0;
+     transition-duration: 2s;
+            }
+        #ch2item2 {
+            background-image: url(Icons/orb_active.png);
+            background-repeat: no-repeat;
+            position:absolute; 
+            background-size: 100%; 
+            width: 30%;
+            height: 30%;
+            top: 60%;
+            right: 5%;
+            float: right;
+            opacity: 0;
+            transition-duration: 2s;
+            }
+            #ch2item3 {
+                background-image: url(Icons/orb_active.png);
+                background-repeat: no-repeat;
+                position: absolute;
+                background-size: 80%; 
+                width: 20%;
+                height: 20%;
+                top: 62%;
+                left: 30%;
+                float: left; 
+                opacity: 0;
+                transition-duration: 2s;
+            }
+            #ch2item4 {
+                background-image: url(Icons/orb_active.png);
+                background-repeat: no-repeat;
+                background-size: 45%; 
+                position: absolute;
+                width: 10%;
+                height: 10%;
+                top: 65%;
+                left: 50%; 
+                opacity: 0;
+                transition-duration: 2s;
+            }
+            #ch2item5{
+                background-image: url(Icons/orb_active.png);
+                background-repeat: no-repeat;
+                position: absolute;
+                width: 20%;
+                height: 20%; 
+                top: 40%;
+                left: 50%; 
+                opacity: 0;
+                transition-duration: 2s;
+            }
+/* For Chapter 3 */
+#backg3{
+transition-duration: 2s;
+    position: absolute;
+    background-color:#666666;
+    height: 100vh;
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: -1;
+}
+#subBack{
+transition-duration: 2s;
+    position: relative;
+    background-image:url(Icons/bkgdBunchase.svg);
+    background-size: 100%;
+   height: 100vh; 
+    
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 500px;
+    margin: auto;
+    z-index: -1;
+    background-repeat: no-repeat;
+}
+#ch3item {
+            background-image: url(Icons/objBlanket.svg);
+            background-repeat: no-repeat;
+            position:absolute; 
+            width: 20%;
+            height: 20%;
+            top: 65%;
+            left: 10%;
+            float: left;
+            opacity: 0;
+            transition-duration: 2s;
+            }
+        #ch3item2 {
+            background-image: url(Icons/objDCatcher.svg);
+            background-repeat: no-repeat;
+            position:absolute; 
+            width: 20%;
+            height: 20%;
+            top: 60%;
+            left: 80%;
+            float: right;
+            opacity: 0;
+            transition-duration: 2s;
+            }
+            #ch3item3 {
+                background-image: url(Icons/objFlashlight.svg);
+                background-repeat: no-repeat;
+                position: absolute;
+                width: 10%;
+                height: 10%;
+                top: 62%;
+                left: 30%;
+                float: left;
+                opacity: 0;
+                transition-duration: 2s;
+            }
+            #ch3item4 {
+                background-image: url(Icons/objRabbit2.svg);
+                background-repeat: no-repeat;
+                position: absolute;
+                width: 20%;
+                height: 20%;
+                top: 65%;
+                left: 40%; 
+                opacity: 0;
+                transition-duration: 2s;
+            }
+            #ch3item5{
+                background-image: url(Icons/objStorybook.svg);
+                background-repeat: no-repeat;
+                position: absolute;
+                width: 20%;
+                height: 20%;
+                top: 50%;
+                left: 40%; 
+                opacity: 0;
+                transition-duration: 2s;
+            }
+/* For Chapter 4 */
+#backg4{
+    transition-duration: 2s;
+    position: relative;
+    background-image:url(Icons/bgsubUrb.svg);
+    background-size: 100%;
+   opacity: 0%;
+   height: 100vh; 
+    
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: -1;
+    background-repeat: no-repeat;
+}
+#subback{   transition-duration: 2s;
+    position: relative;
+    background-image:url(Icons/bkgdBaddream.svg);
+    background-size: 100%;
+   opacity: 0%;
+   height: 100vh; 
+    
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: -1;
+    background-repeat: no-repeat;
+}
+#ch4item {
+            background-image: url(Icons/objCar.svg);
+            background-repeat: no-repeat;
+            position:absolute; 
+            width: 10%;
+            height: 10%;
+            top: 65%;
+            left: 20%;
+            float: left;
+            opacity: 0;
+            transition-duration: 2s;
+            }
+        #ch4item2 {
+            background-image: url(Icons/objBall.svg);
+            background-repeat: no-repeat;
+            position:absolute; 
+            width: 10%;
+            height: 10%;
+            top: 60%;
+            right: 10%;
+            float: right;
+            opacity: 0;
+            transition-duration: 2s;
+            }
+            #ch4item3 {
+                background-image: url(Icons/objNewspaper.svg);
+                background-repeat: no-repeat;
+                position: absolute;
+                width: 10%;
+                height: 10%;
+                top: 62%;
+                left: 30%;
+                float: left;
+                opacity: 0;
+                transition-duration: 2s;
+            }
+            #ch4item4 {
+                background-image: url(Icons/objCell.svg);
+                background-repeat: no-repeat;
+                position: absolute;
+                width: 10%;
+                height: 10%;
+                top: 65%;
+                left: 40%;
+                opacity: 0;
+                transition-duration: 2s;
+            }
+            #ch4item5{
+                background-image: url(Icons/objRabbit.svg);
+                background-repeat: no-repeat;
+                position: absolute;
+                width: 10%;
+                height: 10%;
+                top: 50%;
+                left: 50%; 
+                opacity: 0;
+                transition-duration: 2s;
+            }
+
+/*  Sticky Header Stuff */
+    #filler {
+        padding-top: 50px;
+        background: #ccc;
+        width: 100%;
+        height: 5000px;     
+    }
+
+    #stickyHeader {
+        position: fixed;
+        background-color: #450000;
+        left: 0;
+        top: 0;
+        height: 15%;
+        width: 100%;
+        z-index: 1;
+    }
+
+    #logoPic {
+        position: absolute;
+        top: 5px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 10%;
+        height: 90%;
+    }
+
+    #logoPic:hover {
+        width: 11%;
+        height: 91%;
+    }
+
+    
+
+    #btnHelp {
+        position: relative;
+        background-image: url(Icons/btnHelp.svg);
+        background-size: contain;
+        background-repeat: no-repeat; 
+        float: right;
+        margin: auto;
+        top: 35%;
+        right: 5%;  
+        width: 10%;
+        height: 50%;
+
+    }
+
+    #btnHelp:hover {
+        width:11%;
+        right: 4%;
+        top: 33%;
+    }
+
+
+
+
+
+/* Character and story */
+#happyMemory{
+    transition-duration: 2s;
+    position: relative;
+    background-size: contain;
+    background-image: url(Icons/objParentsGirlBall.svg);
+    background-repeat: no-repeat;
+    float: right;
+    top: 16%;
+    margin: auto;
+    height: 100%;     
+    width: 30%;
+   
+    
+}
+#girl{
+    transition-duration: 5s;
+       position: absolute;
+    background-image: url(Icons/objgirl1v1.svg);
+    background-repeat: no-repeat;
+    float: right;
+     bottom: 0px;
+     left: 0%;
+     top: 50%;
+    left: 55%;
+     margin: auto;
+     height: 100%;
+    width: 35%;
+}
+#girl2{
+     position: relative;
+    background-image: url(Icons/objGirl2v1.svg);
+    background-repeat: no-repeat;
+    float: right;
+     bottom: 500px;
+     left: 0%;
+     top: 20%;
+     margin: auto;
+     height: 100%;
+    width: 35%;
+}
+#Bunbun{
+    position: relative;
+    background-image: url(Icons/objRabbit.svg);
+    background-repeat: no-repeat;
+    float: left;
+     bottom: 500px;
+     left: 20%;
+     top: 20%;
+     margin: auto;
+     height: 30%;
+    width: 20%;
+}
+#nextPage{
+    position: absolute;
+    background-image: url(Icons/btnNextInfo.svg);
+    background-repeat: no-repeat;
+    margin: auto;
+    float: right;
+    left: 250px;
+    right: 0;
+    bottom: 2px;
+    top: 200px;
+    width: 13%;
+    min-height: 35px;
+    z-index: 5;
+    
+}
+
+#nextPage2{
+    position: absolute;
+    background-image: url(Icons/btnMainMenu.svg);
+    background-repeat: no-repeat;
+    margin: auto;
+    float: right;
+    left: 250px;
+    right:0;
+
+    top: 600px;
+    width: 13%;
+    min-height: 35px;
+    height: 10%;
+    z-index: 5;
+    
+}
+h1{
+    font-family:"nunito";
+    position:relative;
+    font-size: 47pt;
+    color:red;
+    text-align: center;
+    margin: auto;
+        top: 210px;
+        left: 0;
+        right: 0;
+        width: 50%;
+        height: 80px;
+}
+
+#textBox {
+    user-select: none;
+}
+
+#orb{
+    transition-duration: 2s;
+    background-image: url(Icons/orb_active.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: relative; 
+    width: 45px;
+    height: 45px; 
+    margin-left: 24px; 
+    margin-top: 25px; 
+}
+#orb2{
+    transition-duration: 2s;
+    background-image: url(Icons/orb_unactive.svg);
+    background-size: 50%;
+    background-repeat: no-repeat; 
+    position: relative; 
+    width: 45px;
+    height: 45px; 
+    margin-left: 40px; 
+    margin-top: 95px; 
+}
+#orb3{
+    transition-duration: 2s;
+    background-image: url(Icons/orb_unactive.svg);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    position: relative; 
+    width: 45px;
+    height: 45px; 
+    margin-left: 40px; 
+    margin-top: 95px; 
+}

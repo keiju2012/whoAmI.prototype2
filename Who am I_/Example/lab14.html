@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">      
+        
+        <title>Toggles/Switch</title>
+        <style>
+        
+            #ab_title, #ab_desc {
+                
+                text-align: center;
+                left: 0px;
+                right: 0px;
+                height: 20px;
+                
+            }
+            
+        </style>
+    </head> 
+    <body>
+        
+        <div id="ab_title">DEFAULT TITLE</div>
+        <div id="ab_desc">DEFAULT DESCRIPTION</div>
+        
+        <input id="textInput1" type="text" />
+        <button id="button1"> generate Pic </button>
+        <div id="imageDisplay"></div>
+        
+    
+        <script>
+//making app into an object for saving
+var ab = {
+    title:"",
+    desc:"",
+    images:[]
+}
+
+//variables
+var imageInput = document.getElementById("textInput1");
+var buton1 = document.getElementById("button1");
+var imageDisplay = document.getElementById("imageDisplay");
+var abTitle = document.getElementById("ab_title");
+var abDesc = document.getElementById("ab_desc");
+
+var data = localStorage.getItem("artbo");
+if(data){
+    ab = JSON.parse(data);
+    
+    abTitle.innerText = ab.title;
+    abDesc.innerText = ab.desc;
+}
+
+var mouseDown = false;
+var curImg = null;
+
+//click button to create image
+buton1.addEventListener("click", function(){
+    
+    var newImg = document.createElement("img");
+    newImg.src = imageInput.value;
+    imageDisplay.appendChild(newImg);
+    newImg.style.position = "absolute";
+    newImg.style.left = "100px";
+    newImg.style.top = "100px";
+    newImg.style.width = "300px";
+    
+    newImg.addEventListener("mousedown", function(ev){
+        mouseDown = true;
+        curImg = this;
+        ev.preventDefault();
+    });
+    
+    newImg.addEventListener("mouseup", function(ev){
+        mouseDown = false;
+        curImg = null;
+    });
+    
+//    newImg.addEventListener("click", function(ev){
+//        
+//        console.log(ev.pageX, ev.pageY);
+//        this.style.left = ev.pageX + "px"
+//        this.style.top = ev.pageY + "px"
+//    })
+});
+
+//detect the moving of the mouse in the window
+window.addEventListener("mousemove", function(ev){
+   if(mouseDown == true && curImg != null){
+       //move the image!
+       curImg.style.left = (ev.pageX - curImg.offsetWidth/2) + "px";
+       curImg.style.top = (ev.pageY - curImg.offsetHeight/2) + "px";
+   }
+});
+
+var editTitle = false;
+//click the title and create an input
+abTitle.addEventListener("click", function(){
+    
+    if(editTitle == false){
+        var nInput = document.createElement("input");
+        nInput.value = abTitle.innerText;
+    
+        abTitle.innerHTML = "";
+        abTitle.appendChild(nInput);
+        editTitle = true;
+        
+        nInput.addEventListener("keyup", function(ev){
+            if(ev.keyCode == 13){
+                
+                ab.title = nInput.value;
+                
+                var txt = JSON.stringify(ab);
+                localStorage.setItem("artbo", txt);
+                
+                abTitle.innerText = nInput.value;
+                editTitle = false;
+            }
+        });
+    }
+});
+
+var editDesc = false;
+//Setting description
+abDesc.addEventListener("click", function(){
+    
+    if(editDesc == false){
+        var newInput = document.createElement("input");
+        newInput.value = abDesc.innerText;
+        
+        abDesc.innerHTML = "";
+        abDesc.appendChild(newInput);
+        editDesc = true;
+        
+        newInput.addEventListener("keyup", function(ev){
+            if(ev.keyCode == 13){
+                
+                ab.desc = newInput.value;
+                
+                var txt = JSON.stringify(ab);
+                localStorage.setItem("artbo", txt);
+                
+                abDesc.innerText = newInput.value;
+                editDesc = false;
+            }
+        });
+    }
+});
+        </script>
+    </body>
+</html>

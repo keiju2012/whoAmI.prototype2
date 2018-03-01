@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="whostyle2.css">       
+        <link rel="stylesheet" type="text/css" href="whostyle.css">       
+        
+        <title>Who am I?</title>
+    </head> 
+    <body>
+<!-- basic things for each chapter -->
+        <div id="backg3">
+            <div id="subBack">   
+   
+            <div id="navBar"> 
+                <div id="orb"></div>
+            <div id="orb2"></div>
+            <div id="orb3"></div>
+                </div>
+                <div id=ch3item></div>
+                <div id=ch3item2></div>
+                <div id=ch3item3></div>
+                <div id=ch3item4></div>
+                <div id=ch3item5></div>
+                <div id="textBox">
+                    <p id="iBox"></p>
+                   <div id="nextPage">
+                    </div>
+        
+        
+           </div> 
+    </div>
+        </div>
+        
+        
+        <script src="variables.js"></script>
+        <script>
+            var subBack = document.getElementById("subBack"),
+                ch3item = document.getElementById("ch3item"),
+                ch3item2 = document.getElementById("ch3item2"),
+                ch3item3 = document.getElementById("ch3item3"),
+                ch3item4 = document.getElementById("ch3item4"),
+                ch3item5 = document.getElementById("ch3item5");          
+            
+            var iBox =
+                document.getElementById("iBox");
+            var p1 = "The protagonist is sad and disheartened from the memory bubble that she just watched, so much so that she starts crying and wishing that she had a companion to console her in her confusion. Out of pure coincidence, a stuffy-looking rabbit doll comes out from the shadows of the background and says hello. Startled that there was someone else in the area, she starts running away from the new thing that she didn’t get to look at yet.";
+            
+            var p2 = "The main protagonist sees a young girl playing with her stuffed rabbit.Though this was all fresh to her, it all seemed familiar.the girl in the memory hugged the rabbit, brought it everywhere she went, put it next to her bed as she slept… Until one day, she lost the rabbit, as though it disappeared from existence.  The little girl attempts to find her rabbit and finds a bubble which pops, emitting the whole scene with blinding light. ";
+            
+            var blank = "Find 5 clues in the background!";
+            var blank2 = "Find 4 clues in the background!";
+            var blank3 = "Find 3 clues in the background!";
+            var blank4 = "Find 2 clues in the background!";
+            var blank5 = "Find the last clue in the background!";
+            var blank6 = "proceed to the next scene";
+            
+            var p3 = "The main protagonist wakes up next to a stuffy of a rabbit that she imagined chasing her earlier, but now she is in a bed with comforting things around her. The bunny begins to hop in a random direction and stops short of your line of sight. The bunny seems to be coaxing you to follow it to some random direction. You decide that dilly dallying around is the worse option, but because you want to find out where you are and why you don’t know anything about yourself, you throw caution into the wind and set off to find the orbs that could possibly be the key to recovering your memories and the reason behind where you are. ";
+            
+              var nextPage = document.getElementById("nextPage");
+            
+
+            var p1Done = false,
+                p1pause = false,
+                p1Pause2 = false,
+                p1Pause3 = false,
+                p1Pause4 = false,
+                p1Pause5 = false,
+                p1Pause6 = false,
+                p2Done = false,
+                p3Done = false;
+            
+            function printing(idPlace, text) {
+                    
+                var letter = 0;
+                var id = setInterval(frame, 5 );   
+                
+                function frame() {                                          
+                    if (letter > text.length) {
+                        clearInterval(id);
+                        
+                        nextPage.addEventListener("click", textContinue);                          
+                    }
+                    
+                    else {
+
+                        var addLetters = text.substring(0,letter);
+                        idPlace.innerText = addLetters;
+                        letter++; 
+
+                    }
+  
+                }
+            }
+            
+            function textContinue() { 
+                iBox.innerText = "";
+                letter = 0;
+                if (!p1Done) {
+                    p1Done = true; 
+                    console.log(p1Done);
+                    if (p1Done == true) {
+                        printing(iBox, p2);
+                        nextPage.removeEventListener("click", textContinue);
+                     subBack.style.backgroundImage = "url(Icons/bkgdBunlost.svg)";
+                        
+                        orb2.style.backgroundImage = "url(Icons/orb_active.svg)";
+                        orb2.style.backgroundSize = "100%";
+                        
+                        orb2.style.marginLeft = "24px"; 
+                        orb2.style.marginTop = "95px";
+                        
+
+                    }
+                }   
+                else if (!p1pause) {
+                    p1pause = true;
+                    if (p1pause == true) {
+                        printing(iBox, blank);
+                         nextPage.style.display = "none";
+                        ch3item.style.opacity = "100";
+                        ch3item2.style.opacity = "100";
+                        ch3item3.style.opacity = "100";
+                        ch3item4.style.opacity = "100";
+                        ch3item5.style.opacity = "100";
+                        ch3item.addEventListener("click", textContinue);
+                        subBack.style.backgroundImage = "url(Icons/bgUnknownBed.svg)";
+                    }
+                        
+                    }
+                else if (!p1Pause2) {
+                    p1Pause2 = true;
+                    if(p1Pause2 == true) {
+                        printing(iBox, blank2);
+                        ch3item.removeEventListener("click", textContinue);
+                        ch3item2.addEventListener("click", textContinue);
+                        ch3item.style.opacity = "0";
+                    }
+                }
+                else if (!p1Pause3) {
+                    p1Pause3 = true;
+                    if(p1Pause3 == true) {
+                        printing(iBox, blank3);
+                        ch3item2.removeEventListener("click", textContinue);
+                        ch3item3.addEventListener("click", textContinue);
+                        ch3item2.style.opacity = "0";
+                    }
+                }
+                else if (!p1Pause4) {
+                    p1Pause4 = true;
+                    if(p1Pause4 == true) {
+                        printing(iBox, blank4);
+                        ch3item3.removeEventListener("click", textContinue);
+                        ch3item4.addEventListener("click", textContinue);
+                        ch3item3.style.opacity = "0";
+                    }
+                }
+                else if (!p1Pause5) {
+                    p1Pause5 = true;
+                    if(p1Pause5 == true) {
+                        printing(iBox, blank5);
+                        ch3item4.removeEventListener("click", textContinue);
+                        ch3item5.addEventListener("click", textContinue);
+                        ch3item4.style.opacity = "0";
+                    }
+                }
+                   else if (!p1Pause6) {
+                    p1Pause6 = true;
+                    if(p1Pause6 == true) {
+                        printing(iBox, blank6);
+                        ch3item5.removeEventListener("click", textContinue);
+                        nextPage.style.display = "block"; 
+                        ch3item5.style.opacity = "0";
+                    }
+                }
+
+                else if (!p2Done) {
+
+                    p2Done = true;
+                    console.log(p2Done);
+                    if (p2Done == true) {
+                        printing(iBox, p3);
+                        nextPage.removeEventListener("click", textContinue); 
+                        
+                        subBack.style.backgroundImage = "url(Icons/bkgdWake.svg)";
+                        orb3.style.backgroundImage = "url(Icons/orb_active.svg)";
+                        
+                        orb3.style.backgroundImage = "url(Icons/orb_active.svg)";
+                        orb3.style.backgroundSize = "100%";
+                        
+                        orb3.style.marginLeft = "24px"; 
+                        orb3.style.marginTop = "95px";
+                        nextPage.style.backgroundImage = "url(Icons/btnNextChapter.svg)";
+                    }                                
+                }
+                
+            
+                else {
+                    
+                window.parent.theChapters.src="chapter4.html";
+                document.location.href="chapter4.html";
+                    
+                    console.log("stop");
+                }
+
+            }            
+                      
+            
+            printing(iBox, p1);
+            
+          
+            
+        </script>
+        
+    </body>
+</html>

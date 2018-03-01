@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="whostyle2.css">       
+        <link rel="stylesheet" type="text/css" href="whostyle.css">       
+        
+        <title>Who am I?</title>
+    </head> 
+    <body>
+        
+        
+        
+        
+        
+<!-- basic things for each chapter -->
+        <div id="backg"> 
+   
+            <div id="happyMemory"></div>
+            <div id="navBar"> 
+            <div id="orb"></div>
+            <div id="orb2"></div>
+            <div id="orb3"></div>
+            </div>
+            <div id="dreamOrb"></div>
+             <div id=ch1item></div>
+            <div id=ch1item2></div>
+            <div id=ch1item3></div>
+            <div id=ch1item4></div>
+            <div id=ch1item5></div>
+            
+            <div id="textBox">
+                <p id="iBox"></p>
+                    
+                    <div id="nextPage"></div>        
+            
+            </div>
+        </div>
+        
+        
+        <script src="variables.js">         
+            
+        </script>
+        
+        <script>    
+            var iBox = document.getElementById("iBox"),
+                backg = document.getElementById("backg"),
+                heroImg = document.getElementById("happyMemory"),
+                orb = document.getElementById("orb"),
+                orb2 = document.getElementById("orb2"),
+                orb3 = document.getElementById("orb3"),
+                ch1item = document.getElementById("ch1item"),
+                ch1item2 = document.getElementById("ch1item2"),
+                ch1item3 = document.getElementById("ch1item3"),
+                ch1item4 = document.getElementById("ch1item4"),
+                ch1item5 = document.getElementById("ch1item5"),
+                dreamOrb = document.getElementById("dreamOrb");
+            
+                
+            var p1 = "Once upon a time, a little girl was playing outside with her family without a care in the world; fully enjoying the sun and the jokes and quips that her parents would talk about, typical dad jokes and the like. Everything was peachy, until that one fateful day...";
+            
+            var p2 = "you wake up in a strange yet familiar place. you wander around the place until you run into your own body sleeping/in a coma and are very confused. you seem to be stuck in your own mind and have no idea how you got into the situation. at first, you panic and try to convince yourself that you are in a dream but the reality is that indeed you have been trapped in your own consciousness/state of limbo.";
+            
+            var blank = "Find 5 clues in the background!";
+            var blank2 = "Find 4 clues in the background!";
+            var blank3 = "Find 3 clues in the background!";
+            var blank4 = "Find 2 clues in the background!";
+            var blank5 = "Find the last clue in the background!";
+            var blank6 = "proceed to the next scene";
+            
+            var p3 = "you coincidentally run into a weird orb looking thing that forces you into a memory that does not make any sense to you. it is of a girl in a hospital bed and your parents by her side as she wakes up from her slumber. ";
+            
+            var p4 = "after watching the story orb thing unfold, you find out that there are many other orbs that are floating around in the deepest parts of the weird area that you are in. You decide that you do not like not knowing where you are or anything about yourself and wander off to find answers on why you ended up in such a place.";
+            
+            
+            var nextPage = document.getElementById("nextPage");
+            
+
+            var ch1p1Done = false,
+                ch1p1Pause = false,
+                ch1p1Pause2 = false,
+                ch1p1Pause3 = false,
+                ch1p1Pause4 = false,
+                ch1p1Pause5 = false,
+                ch1p1Pause6 = false,
+                ch1p2Done = false,
+                ch1p3Done = false,
+                ch1p4Done = false;
+            
+            function printing(idPlace, text) {
+                    
+                var letter = 0;
+                var id = setInterval(frame, 5 );   
+                
+                function frame() {                                          
+                    if (letter > text.length) {
+                        clearInterval(id);
+                        
+                        nextPage.addEventListener("click", textContinue);                          
+                    }
+                    
+                    else {
+
+                        var addLetters = text.substring(0,letter);
+                        idPlace.innerText = addLetters;
+                        letter++; 
+
+                    }
+  
+                }
+            }
+            
+            function textContinue() { 
+                iBox.innerText = "";
+                letter = 0;
+                if (!ch1p1Done) {
+                    ch1p1Done = true; 
+                    if (ch1p1Done == true) {
+                        printing(iBox, p2);
+                        nextPage.removeEventListener("click", textContinue);
+                        backg.style.backgroundImage = "url(Icons/bgHospital.svg)";
+                        heroImg.style.backgroundImage = "url(Icons/objgirl1v1.svg)";
+                        ch1item.style.opacity = "100";
+                        ch1item2.style.opacity = "100";
+                        ch1item3.style.opacity = "100";
+                        ch1item4.style.opacity = "100";
+                        ch1item5.style.opacity = "100";
+                        console.log(gameState);
+                      
+                    }
+                }   
+                
+                else if (!ch1p1Pause) {
+                    
+                    ch1p1Pause = true;
+                    if (ch1p1Pause == true) {
+                        printing(iBox, blank);
+                        ch1item.addEventListener("click", textContinue);
+                         orb2.style.backgroundImage = "url(Icons/orb_active.svg)";
+                        orb2.style.backgroundSize = "100%";
+                        orb2.style.marginLeft = "24px"; 
+                        orb2.style.marginTop = "95px";
+                        nextPage.style.display = "block";
+                        
+                    }
+                }
+                else if (!ch1p1Pause2) {
+                    ch1p1Pause2 = true;
+                    printing(iBox, blank2);
+                    ch1item.removeEventListener("click", textContinue);
+                    ch1item2.addEventListener("click", textContinue);
+                    ch1item.style.opacity = "0";
+
+                  
+
+                    
+                }
+                else if (!ch1p1Pause3) {
+                    ch1p1Pause3 = true;
+                    printing(iBox, blank3);
+                    ch1item2.removeEventListener("click", textContinue);
+                    ch1item3.addEventListener("click", textContinue);
+                    ch1item2.style.opacity = "0";
+                    
+                }
+                 else if (!ch1p1Pause4) {
+                    ch1p1Pause4 = true;
+                    printing(iBox, blank4);
+                    ch1item3.removeEventListener("click", textContinue);
+                    ch1item4.addEventListener("click", textContinue);
+                     ch1item3.style.opacity = "0";
+                    
+                }
+                else if (!ch1p1Pause5) {
+                    ch1p1Pause5 = true;
+                    printing(iBox, blank5);
+                    ch1item4.removeEventListener("click", textContinue);
+                    ch1item5.addEventListener("click", textContinue);
+                    ch1item4.style.opacity = "0";
+                    
+                }
+                else if (!ch1p1Pause6) {
+                    ch1p1Pause6 = true;
+                    printing(iBox, blank6);
+                    ch1item5.removeEventListener("click", textContinue);
+                    nextPage.style.display = "block";
+                    nextPage.removeEventListener("click", textContinue);
+                    ch1item5.style.opacity = "0";
+                  
+                }
+                
+                
+
+                else if (!ch1p2Done) {
+
+                    ch1p2Done = true;;
+                    if (ch1p2Done == true) {
+                        printing(iBox, p3);
+                        nextPage.removeEventListener("click", textContinue); 
+                        dreamOrb.style.opacity = "100"; 
+                       
+                    }                                
+                }
+                else if (!ch1p3Done) {
+
+                    ch1p3Done = true;
+                    if (ch1p3Done == true) {
+                        printing(iBox, p4);
+                        nextPage.removeEventListener("click", textContinue);
+                        
+                        orb3.style.backgroundImage = "url(Icons/orb_active.svg)";
+                        
+                        orb3.style.backgroundImage = "url(Icons/orb_active.svg)";
+                        orb3.style.backgroundSize = "100%";
+                        
+                        orb3.style.marginLeft = "24px"; 
+                        orb3.style.marginTop = "95px";
+                        
+                        nextPage.style.backgroundImage = "url(Icons/btnNextChapter.svg)";
+                        
+
+                    }                                
+                }
+            
+                else {
+                    
+//                    window.parent.theChapters.src="chapter2.html";
+                      document.location.href="chapter2.html";
+
+                    
+                    console.log("stop");
+                }
+
+            }            
+                      
+            
+            printing(iBox, p1);
+            
+
+        </script>    
+        
+    </body>
+</html>

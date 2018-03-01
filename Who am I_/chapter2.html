@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="whostyle2.css">       
+        <link rel="stylesheet" type="text/css" href="whostyle.css">       
+        
+        <title>Who am I?</title>
+    </head> 
+    <body>
+<!-- basic things for each chapter -->
+        <div id="backg2">  
+                      
+            <div id="girl"></div>
+   
+            <div id="navBar"> 
+            <div id="orb"></div>
+            <div id="orb2"></div>
+            <div id="orb3"></div>         
+            </div>
+            <div id="ch2item"></div>
+            <div id="ch2item2"></div>
+            <div id="ch2item3"></div>
+            <div id="ch2item4"></div>
+            <div id="ch2item5"></div>
+                
+                <div id="textBox">
+                    <p id="iBox"></p>
+                   <div id="nextPage">
+                    </div>
+        
+        
+            
+    </div>
+        </div>
+        <script src="variables.js"></script>
+        <script>
+            gameState.ch2 = parseInt("1");
+            localStorage.setItem("gameState", JSON.stringify(gameState));
+            var iBox = document.getElementById("iBox"),
+                ch2item = document.getElementById("ch2item"),
+                ch2item2 = document.getElementById("ch2item2"),
+                ch2item3 = document.getElementById("ch2item3"),
+                ch2item4 = document.getElementById("ch2item4"),
+                ch2item5 = document.getElementById("ch2item5");
+
+            var p1 = "You wander into a new area; it is of a room that is familiar to you (a bedroom). You are looking around the room for clues on why it is familiar to you. ";
+            
+            var p2 = "As you are exploring the area, you walk into an orb that brings you into another vision that you don’t immediately understand: you are going around popping bubbles for no apparent reason, and for every bubble that you pop that is progressively larger than the previous one, you get a sinking feeling of dread that you can’t shake off. ";
+            
+            var blank = "Pop 5 bubbles in the background!";
+            var blank2 = "Pop 4 bubbles in the background!";
+            var blank3 = "Pop 3 bubbles in the background!";
+            var blank4 = "Pop 2 bubbles in the background!";
+            var blank5 = "Pop the last bubble in the background!";
+            var blank6 = "proceed to the next scene";
+            
+            var p3 = "For some reason, you continue to pop the bubbles knowing full well that they give you an uneasy feeling. Eventually you reach the end of the bubbles, as you proceed to pop the last bubble, you are immediately forced out of the vision you had of the event, seeing a girl crying in a bed as her parents rush to her side. You feel bad about what you have seen but don’t know why so you continue on wandering to find more of those orbs that show you random visions. ";
+            
+            var nextPage = document.getElementById("nextPage");
+            
+
+            var p1Done = false,
+                p2Done = false,
+                p2Pause = false,
+                p2Pause2 = false,
+                p2Pause3 = false,
+                p2Pause4 = false,
+                p2Pause5 = false,
+                p2Pause6 = false,
+                p3Done = false;
+                
+            
+            function printing(idPlace, text) {
+                    
+                var letter = 0;
+                var id = setInterval(frame, 5 );   
+                
+                function frame() {                                          
+                    if (letter > text.length) {
+                        clearInterval(id);
+                        
+                        nextPage.addEventListener("click", textContinue);                          
+                    }
+                    
+                    else {
+
+                        var addLetters = text.substring(0,letter);
+                        idPlace.innerText = addLetters;
+                        letter++; 
+
+                    }
+  
+                }
+            }
+            
+            function textContinue() { 
+                iBox.innerText = "";
+                letter = 0;
+                if (!p1Done) {
+                    p1Done = true; 
+                    console.log(p1Done);
+                    if (p1Done == true) {
+                        printing(iBox, p2);
+                        nextPage.removeEventListener("click", textContinue);
+                        
+                        orb2.style.backgroundImage = "url(Icons/orb_active.svg)";
+                        orb2.style.backgroundSize = "100%";
+                        
+                        orb2.style.marginLeft = "24px"; 
+                        orb2.style.marginTop = "95px";
+
+                    }
+                }  
+                else if (!p2Pause) {
+                    p2Pause = true;
+                    if (p2Pause == true) {
+                        printing(iBox, blank);
+                        
+                        nextPage.style.display = "none";
+                        ch2item.style.opacity = "100";
+                        ch2item2.style.opacity = "100";
+                        ch2item3.style.opacity = "100";
+                        ch2item4.style.opacity = "100";
+                        ch2item5.style.opacity = "100";
+                        ch2item.addEventListener("click", textContinue);
+                    }
+                }
+                else if (!p2Pause2) {
+                    p2Pause2 = true;
+                    if (p2Pause2 == true) {
+                        printing(iBox, blank2);
+                        
+                        ch2item.removeEventListener("click", textContinue);
+                       ch2item.style.opacity = "0"; ch2item2.addEventListener("click", textContinue);
+                    }
+                }
+                else if (!p2Pause3) {
+                    p2Pause3 = true;
+                    if (p2Pause3 == true) {
+                        printing(iBox, blank3);
+                        
+                        ch2item2.removeEventListener("click", textContinue);
+                       ch2item2.style.opacity = "0"; ch2item3.addEventListener("click", textContinue);
+                    }
+                }
+                 else if (!p2Pause4) {
+                    p2Pause4 = true;
+                    if (p2Pause4 == true) {
+                        printing(iBox, blank4);
+                        
+                        ch2item3.removeEventListener("click", textContinue);
+                       ch2item3.style.opacity = "0"; ch2item4.addEventListener("click", textContinue);
+                    }
+                }
+                 else if (!p2Pause5) {
+                    p2Pause5 = true;
+                    if (p2Pause5 == true) {
+                        printing(iBox, blank5);
+                        
+                        ch2item4.removeEventListener("click", textContinue);
+                       ch2item4.style.opacity = "0"; ch2item5.addEventListener("click", textContinue);
+                    }
+                }
+                else if (!p2Pause6) {
+                    p2Pause6 = true;
+                    if (p2Pause6 == true) {
+                        printing(iBox, blank6);
+                        
+                        ch2item5.removeEventListener("click", textContinue);
+                        ch2item5.style.opacity = "0"; 
+                        nextPage.style.display = "block";
+                    }
+                }
+
+                else if (!p2Done) {
+
+                    p2Done = true;
+                    console.log(p2Done);
+                    if (p2Done == true) {
+                        printing(iBox, p3);
+                        nextPage.removeEventListener("click", textContinue);                   backg2.style.backgroundImage = "url(Icons/bkgdCry.svg)";
+                        backg2.style.backgroundSize = "100%";
+                        girl.style.display = "none";
+                        orb3.style.backgroundImage = "url(Icons/orb_active.svg)";
+                        
+                        orb3.style.backgroundImage = "url(Icons/orb_active.svg)";
+                        orb3.style.backgroundSize = "100%";
+                        
+                        orb3.style.marginLeft = "24px"; 
+                        orb3.style.marginTop = "95px";
+                        nextPage.style.backgroundImage = "url(Icons/btnNextChapter.svg)";
+                    }                                
+                }
+                
+                
+                else {
+                    
+//                    window.parent.theChapters.src="chapter3.html";
+                    document.location.href="chapter3.html";
+                    
+                    console.log("stop");
+                }
+
+            }            
+                      
+            
+            printing(iBox, p1);
+            
+
+            
+            
+        </script>
+        
+    </body>
+</html>

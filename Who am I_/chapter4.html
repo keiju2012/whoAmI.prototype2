@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="whostyle2.css">       
+        <link rel="stylesheet" type="text/css" href="whostyle.css">       
+        
+        <title>Who am I?</title>
+    </head> 
+    <body>
+<!-- basic things for each chapter -->
+        <div id="backg3">
+            <div id="backg4">
+
+            <div id="girl"></div>
+            
+   
+            <div id="navBar"> 
+                <div id="orb"></div>
+            <div id="orb2"></div>
+            <div id="orb3"></div>
+            </div>
+                <div id="ch4item"></div>
+                <div id="ch4item2"></div>
+                <div id="ch4item3"></div>
+                <div id="ch4item4"></div>
+                <div id="ch4item5"></div>
+                
+                <div id="textBox">
+                    <p id="iBox"></p>
+                   <div id="nextPage">
+                    </div>
+        
+        
+           </div> 
+    </div>
+        </div>
+        <script>
+            
+            var iBox =
+                document.getElementById("iBox"),
+                ch4item = document.getElementById("ch4item"),
+                ch4item2 = document.getElementById("ch4item2"),
+                ch4item3 = document.getElementById("ch4item3"),
+                ch4item4 = document.getElementById("ch4item4"),
+                ch4item5 = document.getElementById("ch4item5");
+                
+            var p1 = "Wandering in a suburban looking area, you find a home that is familiar to you. You start searching the area in hopes of finding more information about yourself.";
+            
+            var p2 = "In one of the bubbles you come across in your travels, it shows a girl that is playing happily, trying to get the attention of her father while playing outside on a nice sunny day. everything seems to be right in the world as you play around and such, but randomly, you get flashes of scenes and faces you do not remember or understand. eventually during the day, you black out. For some reason, you seem to remember this scene like it was from a movie or something you have seen in your past. ";
+            
+            var p3 = "the girl and her companion are both in the middle of a conversation but for some reason the girl does not remember starting one with them, she does not know anything that they are talking about so she tries to interrupt and ask what they are trying to tell them. the companion laughs and plays off the question as if it was a funny inside joke that you have been sharing for a long time. because of the awkward retort that she gives by not reacting to the calling out of the supposed joke, he sighs, and then asks whether or not she remembers anything at all. from there the guy explains that they do not know anything about their pasts and they have been travelling around with each other for as far as they can remember, looking for memory globes that for some reason only she can see. ";
+            
+            var blank = "Find 5 clues in the background!";
+            var blank2 = "Find 4 clues in the background!";
+            var blank3 = "Find 3 clues in the background!";
+            var blank4 = "Find 2 clues in the background!";
+            var blank5 = "Find the last clue in the background!";
+            var blank6 = "proceed to the next scene";
+            
+            
+            var p4 = "while wandering around an open field, the girl comes across a bubble, which was larger than the others. As she popped it, it showed a completely different memory; a memory with a darker atmosphere. It is of a daughter playing outside, without a care in the world. She is happily playing with her bunny, with her parents watching over her. One moment, everything is good and cheery, the next moment, while the girl is not paying attention, her parents disappear. Not knowing where they went, she wanders around the area in sadness. She awakens from this dream in tears. Her companion comes over to comfort her, the scene fades to black. ";
+            
+              var nextPage = document.getElementById("nextPage");
+            
+
+            var p1Done = false,
+                p2Done = false,
+                p2Pause = false,
+                p2Pause2 = false,
+                p2Pause3 = false,
+                p2Pause4 = false,
+                p2Pause5 = false,
+                p2Pause6 = false,
+                p3Done = false,
+                p4Done = false;
+            
+            
+            function printing(idPlace, text) {
+                    
+                var letter = 0;
+                var id = setInterval(frame, 5 );   
+                
+                function frame() {                                          
+                    if (letter > text.length) {
+                        clearInterval(id);
+                        
+                        nextPage.addEventListener("click", textContinue);                          
+                    }
+                    
+                    else {
+
+                        var addLetters = text.substring(0,letter);
+                        idPlace.innerText = addLetters;
+                        letter++; 
+
+                    }
+  
+                }
+            }
+            
+            function textContinue() { 
+                iBox.innerText = "";
+                letter = 0;
+                if (!p1Done) {
+                    p1Done = true; 
+                    console.log(p1Done);
+                    if (p1Done == true) {
+                        printing(iBox, p2);
+                        nextPage.removeEventListener("click", textContinue);
+                            backg4.style.backgroundImage = "url(Icons/bkgdBaddream.svg)";
+                        girl.style.display = "none";
+
+                    }
+                }   
+
+                else if (!p2Done) {
+
+                    p2Done = true;
+                    console.log(p2Done);
+                    if (p2Done == true) {
+                        printing(iBox, p3);
+                        nextPage.removeEventListener("click", textContinue); 
+                        orb2.style.backgroundImage = "url(Icons/orb_active.svg)";
+                        orb2.style.backgroundSize = "100%";
+                        
+                        orb2.style.marginLeft = "24px"; 
+                        orb2.style.marginTop = "95px";
+                    
+                    }                                
+                }
+                else if (!p2Pause) {
+                    p2Pause = true;
+                    if (p2Pause == true) {
+                        printing(iBox, blank);
+                        nextPage.style.display = "none";
+                        ch4item.style.opacity = "100";
+                        ch4item2.style.opacity = "100";
+                        ch4item3.style.opacity = "100";
+                        ch4item4.style.opacity = "100";
+                        ch4item5.style.opacity = "100";
+                        ch4item.addEventListener("click", textContinue);
+                    }
+                }
+                else if (!p2Pause2) {
+                    p2Pause2 = true;
+                    if (p2Pause2 == true) {
+                        printing(iBox, blank2);
+                        ch4item2.addEventListener("click", textContinue);
+                        ch4item.removeEventListener("click", textContinue);
+                        ch4item.style.opacity = "0";
+                    }
+                }
+                else if (!p2Pause3) {
+                    p2Pause3 = true;
+                    if (p2Pause3 == true) {
+                        printing(iBox, blank3);
+                        ch4item3.addEventListener("click", textContinue);
+                        ch4item2.removeEventListener("click", textContinue);
+                        ch4item2.style.opacity = "0";
+                    }
+                }
+                else if (!p2Pause4) {
+                    p2Pause4 = true;
+                    if (p2Pause4 == true) {
+                        printing(iBox, blank4);
+                        ch4item4.addEventListener("click", textContinue);
+                        ch4item3.removeEventListener("click", textContinue);
+                        ch4item3.style.opacity = "0";
+                    }
+                }
+                else if (!p2Pause5) {
+                    p2Pause5 = true;
+                    if (p2Pause5 == true) {
+                        printing(iBox, blank5);
+                        ch4item5.addEventListener("click", textContinue);
+                        ch4item4.removeEventListener("click", textContinue);
+                        ch4item4.style.opacity = "0";
+                    }
+                }
+                else if (!p2Pause6) {
+                    p2Pause6 = true;
+                    if (p2Pause6 == true) {
+                        printing(iBox, blank6);
+                        nextPage.style.display = "block";
+                        ch4item5.removeEventListener("click", textContinue);
+                        ch4item5.style.opacity = "0";
+                    }
+                }
+                 else if (!p3Done) {
+
+                    p3Done = true;
+                    console.log(p3Done);
+                    if (p3Done == true) {
+                        printing(iBox, p4);
+                        nextPage.removeEventListener("click", textContinue);
+                        
+                        orb3.style.backgroundImage = "url(Icons/orb_active.svg)";
+                        
+                        orb3.style.backgroundImage = "url(Icons/orb_active.svg)";
+                        orb3.style.backgroundSize = "100%";
+                        
+                        orb3.style.marginLeft = "24px"; 
+                        orb3.style.marginTop = "95px";
+                        nextPage.style.backgroundImage = "url(Icons/btnNextChapter.svg)";
+                    }                                
+                }
+            
+                else {
+                    
+                                        document.location.href= "ThankYou.html";
+                    
+                    console.log("stop");
+                }
+
+            }            
+                      
+            
+            printing(iBox, p1);
+            
+          
+            
+        </script>
+        
+    </body>
+</html>

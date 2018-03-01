@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="whostyle.css">       
+        
+        <title>Who am I?</title>
+    </head> 
+    <body>
+
+            <div id="stickyHeader"> 
+                <div class="logoPic" id="logoPic"><img src="Icons/logo.svg" alt="logo" /></div>
+                <div class="btnHelp" id="btnHelp"> </div>
+            </div>        
+                
+        <div id="container" style="bottom: calc(0vh);">  
+                    
+            <div class="mainMenu" id=mainMenu>
+                <div id="title"></div>
+
+                <div id="btnStart" class="btnMain"></div>
+                <div id="btnSceneSelect" class="btnMain"></div>
+                <div id="btnMyMemories" class="btnMain"></div>
+                <div id="btnFeedback" class="btnMain"></div>
+
+                <div id="logoGirl"></div>
+
+    <!--    The Social Media Buttons    -->
+
+                <a href="https://www.instagram.com" target="_blank"><div id="btnInstagram"></div></a>
+                <a href="https://www.twitter.com" target="_blank"><div id="btnTwitter"></div></a>
+                <a href="https://www.facebook.com" target="_blank"><div id="btnFacebook"></div></a> 
+
+<!--    Form Stuff            -->
+
+                <div class="form-main" id="form-main">
+                    <div id="form-div">
+                        <form class="form" id="form1">
+
+                          <p class="name">
+                            <input name="name" type="text" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" placeholder="Name" id="name" />
+                          </p>
+
+                          <p class="email">
+                            <input name="email" type="text" pattern="[^ @]*@[^ @]*" class="validate[required,custom[email]] feedback-input" id="email" placeholder="Email" />
+                          </p>
+
+                          <p class="text">
+                            <textarea name="text" class="validate[required,length[6,300]] feedback-input" id="comment" placeholder="Comment" required="required"></textarea>
+                          </p>
+
+
+                          <div id="theFeedback" class="submit">
+                            <input type="submit" value="SEND" id="btnRed" />
+                            <div class="ease"></div>
+                          </div>
+                        </form>
+                    </div>                 
+
+                    <!--    This is going to be added using createElement
+
+                        <div id="navBar"> </div>
+
+                        <div id="textBox"></div>
+                    -->           
+                </div>
+        
+            </div>
+            
+    <!--    Scene Select Page   -->
+    
+            <div class="sceneSelect" id="sceneSelect"> 
+                
+                <div id="innerSSContainer">
+                    
+                    <div id="btnDdChapter" class="dropdown">
+                        
+                        <button onclick="ddChapter()" class="dropbtn">Chapters</button>
+                        
+                        <div id="myDropdown" class="dropdown-content">
+                            <a id="ddshowAll">Show All</a>
+                            <a id="ddChapter1">Chapter 1</a>
+                            <a id="ddChapter2">Chapter 2</a>
+                            <a id="ddChapter3">Chapter 3</a>
+                        </div>
+                        
+                    </div>
+
+                    <div id="btnDdScene" class="dropdown">
+                        
+                        <button onclick="ddScene()" class="dropbtn">Scenes</button>
+                        
+                        <div id="myDropdown2" class="dropdown-content">
+                            <a id="ddScene1">Scene 1</a>
+                            <a id="ddScene2">Scene 2</a>
+                            <a id="ddScene3">Scene 3</a>
+                        </div>
+                        
+                    </div>
+                    
+                    <div id="btnBack" class="btnBack dropbtn dropdown">Back</div>
+
+                    <div id="chapterElements">
+                        
+                        <h3 id="chboxUnlocked"><input id="unlocked" type="checkbox" />Unlocked</h3>
+
+                        <div id="ch1Group">
+                            <h2>Chapter 1: <br/>Who am I?</h2><br/><br/>
+                            <img id="ch1Start" src="Icons/btnSceneCh1.svg" alt="chapter1" width="50%;"/><br/>
+                            <div class="btnSceneSelect" id="ch1s1"><img src="Icons/btnActive.svg" alt="ch1s1" /> </div>
+                            <div class="btnSceneSelect" id="ch1s2">
+                                <img src="Icons/btnLocked.svg" alt="ch1s2" />                                
+                            </div>
+                            <div class="btnSceneSelect" id="ch1s3">
+                                <img src="Icons/btnLocked.svg" alt="ch1s2" />
+                            </div>
+                        </div>
+
+                        <div id="ch2Group">
+                            <h2>Chapter 2: <br/>Memories</h2><br/><br/>
+                            <img id="ch2Start" src="Icons/btnSceneCh2Locked.svg" alt="chapter1" width="50%;"/> <br/>
+                            <div class="btnSceneSelect" id="ch2s1"><img src="Icons/btnLocked.svg" alt="ch2s1" /> </div>
+                            <div class="btnSceneSelect" id="ch2s2">
+                                <img src="Icons/btnLocked.svg" alt="ch2s2" />                                
+                            </div>
+                            <div class="btnSceneSelect" id="ch2s3">
+                                <img src="Icons/btnLocked.svg" alt="ch2s3" />
+                            </div>
+                        </div>
+
+                        <div id="ch3Group">
+                            <h2>Chapter 3: <br/>Looking For a Friend</h2><br/><br/>
+                            <img id="ch3Start" src="Icons/btnSceneCh3Locked.svg" alt="chapter1" width="50%;"/><br/>
+                            <div class="btnSceneSelect" id="ch1s1"><img src="Icons/btnLocked.svg" alt="ch1s1" /> </div>
+                            <div class="btnSceneSelect" id="ch1s2">
+                                <img src="Icons/btnLocked.svg" alt="ch1s2" />                                
+                            </div>
+                            <div class="btnSceneSelect" id="ch1s3">
+                                
+                                <img src="Icons/btnLocked.svg" alt="ch1s2" />
+                            </div>
+                        </div>
+                    </div>    
+
+                </div>
+            </div>
+        
+<!--    My Memories         -->
+            <div id="myMemories"></div>
+        </div>
+        
+        
+<!--    Chapter iFrames     -->
+        <iframe id="theChapters" src="" scrolling="no"></iframe>
+           
+        <script src="variables.js"></script>
+        <script src="buttons.js"></script>
+        <script src="functions.js"></script>
+        <script src="theMemories.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>

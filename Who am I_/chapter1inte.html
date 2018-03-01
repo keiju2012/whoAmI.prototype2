@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="whostyle2.css">       
+        <link rel="stylesheet" type="text/css" href="whostyle.css">       
+        
+        <title>Who am I?</title>
+        <style>
+        #item {
+            background-image: url(Icons/objScope.svg);
+            background-repeat: no-repeat;
+            position:absolute; 
+            width: 10%;
+            height: 10%;
+            top: 65%;
+            left: 20%;
+            float: left;
+            }
+          #item2 {
+            background-image: url(Icons/objPillcase.svg);
+            background-repeat: no-repeat;
+            position:absolute; 
+            width: 10%;
+            height: 10%;
+            top: 60%;
+            right: 10%;
+            float: right;
+            }
+            #item3 {
+                background-image: url(Icons/objFlowers.svg);
+                background-repeat: no-repeat;
+                position: absolute;
+                width: 10%;
+                height: 10%;
+                top: 62%;
+                left: 30%;
+                float: left; 
+            }
+            #item4 {
+                background-image: url(Icons/objID.svg);
+                background-repeat: no-repeat;
+                position: absolute;
+                width: 10%;
+                height: 10%;
+                top: 65%;
+                left: 40%; 
+            }
+            #item5{
+                background-image: url(Icons/objPic.svg);
+                background-repeat: no-repeat;
+                position: absolute;
+                width: 10%;
+                height: 10%;
+                top: 50%;
+                left: 50%; 
+            }
+            
+            #inte{
+                width: 100%;
+                height: 50%;
+                margin-top: 50%;
+            }
+        </style>
+        
+    </head> 
+    <body>
+        
+        
+        
+        
+        
+<!-- basic things for each chapter -->
+        <div id="interactive"> 
+            <div id="inte">
+            
+            <div id="item"></div>
+            <div id="item2"></div>
+            <div id="item3"></div>
+            <div id="item4"></div>
+            <div id="item5"></div>
+                
+            </div>
+            <div id="girl"></div>
+            
+            <div id="navBar"> 
+            <div id="orb"></div>
+            <div id="orb2"></div>
+            <div id="orb3"></div>
+            </div>
+                
+            <div id="textBox">
+                <p id="iBox"></p>
+                    
+                   
+            </div>
+        </div>
+        
+        <script>
+          var iBox = document.getElementById("iBox");  
+            
+        var p1 = "Find 5 clues in this room";
+        var p2 = "Find 4 clues in this room";
+        var p3 = "Find 3 clues in this room";
+        var p4 = "Find 2 clues in this room";
+        var p5 = "Find the last clue in this room";
+        var p6 = "Proceed to next scene";
+            
+            var item = document.getElementById("item"),
+            item2 = document.getElementById("item2"),
+            item3 = document.getElementById("item3"),
+            item4 = document.getElementById("item4"),
+            item5 = document.getElementById("item5");
+            
+            var Clue5Done = false,
+                Clue4Done = false,
+                Clue3Done = false,
+                Clue2Done = false,
+                Clue1Done = false;
+            
+            function printing(idPlace, text) {
+                
+                var letter = 0;
+                var id = setInterval(frame, 5);
+                
+                function frame() {
+                    if (letter > text.length) {
+                        
+                        clearInterval(id);
+                        
+                        item.addEventListener("click", textContinue);
+                        
+                        item2.addEventListener("click", textContinue2);
+                        
+                        item3.addEventListener("click", textContinue3);
+                        
+                        item4.addEventListener("click", textContinue4);
+                        
+                        item5.addEventListener("click", textContinue5);
+                    }
+                    
+                    else {
+                        
+                        var addLetters = text.substring(0,letter);
+                        
+                        idPlace.innertext = addLetters;
+                        letter++;
+                    }
+                }
+            }
+            
+            function textContinue() {
+                iBox.innerText = ""; 
+                letter = 0;
+                if (!Clue5Done){
+                    Clue5Done = true;
+                    if (Clue5Done == true) {
+                        printing(iBox, p2);
+                        
+                        Clue5Done.removeEventListener("click", textContinue);
+                    }
+                }
+            }
+                
+            function textContinue2() {
+                iBox.innerText = ""; 
+                letter = 0;
+            if (!Clue4Done){
+                    Clue4Done = true;
+                    if (Clue4Done = true) {
+                        printing(iBox, p3);
+                        
+                        Clue4Done.removeEventListener("click", textContinue2);
+                    }
+                }
+            }
+            function textContinue3() {
+                iBox.innerText = ""; 
+                letter = 0;
+            if (!Clue3Done){
+                    Clue3Done = true;
+                    if (Clue3Done = true) {
+                        printing(iBox, p4);
+                        
+                        Clue3Done.removeEventListener("click", textContinue3);
+            }
+                }
+            }
+            function textContinue4() {
+                iBox.innerText = ""; 
+                letter = 0;
+            if (!Clue2Done){
+                    Clue2Done = true;
+                    if (Clue2Done = true) {
+                        printing(iBox, p5);
+                        
+                       Clue2Done.removeEventListener("click", textContinue4); 
+                    }
+                }
+            }
+            function textContinue5() {
+                iBox.innerText = ""; 
+                letter = 0;
+                if (!Clue2Done){
+                    Clue2Done = true;
+                    if (Clue2Done = true) {
+                        printing(iBox, p6);
+                        
+                       Clue1Done.removeEventListener("click", textContinue5); 
+            }
+                }
+            }
+                  
+            
+            
+            printing(iBox, p1);
+        </script>
